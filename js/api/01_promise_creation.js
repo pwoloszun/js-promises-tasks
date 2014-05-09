@@ -1,19 +1,18 @@
-
-function loginPromise(username, password) {
+function isOddPromise(i) {
   var deferred = Q.defer();
   setTimeout(function() {
-    if (username == "bob" && password === "secret")
-      deferred.resolve({firstName: "Bob", lastName: "Smith", id: 100});
+    if (i % 2 === 1)
+      deferred.resolve({message: "OK. Is odd", value: i});
     else
-      deferred.reject(new Error("Wrong login or password"));
+      deferred.reject(new Error(i + "is should be odd"));
   }, 600);
   return deferred.promise;
 }
 
 function fulfilledPromise() {
-  return loginPromise("bob", "secret");
+  return isOddPromise(997);
 }
 
 function rejectedPromise() {
-  return loginPromise("qq", "imba!");
+  return isOddPromise(2);
 }
