@@ -9,38 +9,11 @@ function PromisesApp() {
   .always(view.hideSpinner);
 }
 
-/*
- * Promises:
- 1. Crossroads Anim:
- - dwie długie kolejki jezdza na krzyz w losowych odstepach czasu.
- - nie moga sie zderzyc - jesli jedna wjedzie na skrzyzowanie druga
- musi poczekac az pierwsza zjedzie ze skrzyzowania
- * */
-
-
-$(function() {
-//  logIn('Bob', "#secret").then(function(user) {
-//    return getFriendsFor(user).then(function(friends) {
-//      return sendInvitationsTo(friends).then(function() {
-//        log("done!", arguments);
-//      }, function(error) {
-//        log("sendInvitationsTo error", error);
-//        throw error;
-//      });
-//    }, function(error) {
-//      log("getFriendsFor error", error);
-//      throw error;
-//    });
-//  },function(error) {
-//    log("logIn error", error);
-//    throw error;
-//  }).catch(function(error) {
-//    log("error!", error);
-//  });
+function promisesChainApp() {
   // chain
   logIn('Bob', "#secretX").then(function(user) {
     return getFriendsFor(user);
-  }, function(error) {
+  },function(error) {
     log("getFriendsFor error", error);
     throw error;
   }).then(function(friends) {
@@ -51,4 +24,5 @@ $(function() {
   }).catch(function(error) {
     log("catch error", error);
   });
-});
+}
+//promisesChainApp();

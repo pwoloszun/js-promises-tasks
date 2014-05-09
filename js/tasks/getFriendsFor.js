@@ -9,6 +9,7 @@ function getFriendsForPromise(user) {
     {name: "Ed", id: 3, userId: 1},
     {name: "Bob", id: 3, userId: 2}
   ];
+  //TODO
 }
 
 function getFriendsForExampleUsage() {
