@@ -2,8 +2,9 @@ function thenReturnsNewPromise() {
   var promise = fulfilledPromise();
   var outputPromise = promise.then();
 
-  log(outputPromise);
-  log(outputPromise !== promise);
+  log("promise", outputPromise, outputPromise.inspect());
+  log("inspect", outputPromise.inspect());
+  log("then() returns new promise", outputPromise !== promise);
   inspectPromiseAfter(outputPromise, 1000);
 }
 //thenReturnsNewPromise();
@@ -24,7 +25,7 @@ function thenExampleUsage2() {
   var outputPromise = fulfilledPromise().then(function(value) {
     return promiseToReturn;
   });
-  log(outputPromise === promiseToReturn);
+  log("outputPromise is NOT same as promise returned from onFulfilled", outputPromise === promiseToReturn);
 }
 //thenExampleUsage2();
 

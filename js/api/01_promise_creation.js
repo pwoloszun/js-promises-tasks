@@ -4,7 +4,7 @@ function isOddPromise(i) {
     if (i % 2 === 1)
       deferred.resolve({message: "OK. Is odd", value: i});
     else
-      deferred.reject(new Error(i + "is should be odd"));
+      deferred.reject(new Error(i + " should be odd"));
   }, 600);
   return deferred.promise;
 }
